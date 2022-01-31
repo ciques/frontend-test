@@ -5,7 +5,9 @@ const port = 3000
 
 
 function index(req, res) {
+  res.setHeader('Access-Control-Allow-Origin', '*');
   res.send(JSON.stringify(db))
+  
 }
 
 
@@ -16,6 +18,7 @@ function random(req, res) {
     let r = Math.floor(Math.random()*db.length)
     list.push(db[i])
   }
+  res.setHeader('Access-Control-Allow-Origin', '*');
   res.send(list)
 }
 
